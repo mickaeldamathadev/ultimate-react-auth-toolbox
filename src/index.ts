@@ -1,5 +1,8 @@
 import RestrictedRoute from './AUTHENTICATION/components/RestrictedRoute'
 import ScopedComponent from './AUTHENTICATION/components/ScopedComponent'
+import UserContextProvider, {
+  UserContext,
+} from './AUTHENTICATION/context/UserContext'
 import Forgot from './AUTHENTICATION/views/Forgot'
 import Login from './AUTHENTICATION/views/Login'
 import Register from './AUTHENTICATION/views/Register'
@@ -25,5 +28,7 @@ export {
   RoleCard,
   Roles,
   ScopedComponent,
+  UserContext,
+  UserContextProvider,
   Validate,
 }
