@@ -82,7 +82,7 @@ export default function RoleCard({ onError, onSuccess }: CallbackProps) {
         <div>
           <h3>Permissions de l'application</h3>
           <DocumentTable<IPermission>
-            documents={permissions.data as any[]}
+            documents={permissions as any[]}
             action={addPermToRole}
           />
         </div>
