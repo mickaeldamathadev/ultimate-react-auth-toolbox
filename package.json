@@ -1,6 +1,6 @@
 {
   "name": "ultimate-react-auth-toolbox",
-  "version": "1.0.24",
+  "version": "1.0.25",
   "description": "ultimate-react-auth-toolbox",
   "private": false,
   "main": "lib/index.js",
