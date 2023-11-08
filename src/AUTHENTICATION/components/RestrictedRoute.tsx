@@ -1,5 +1,5 @@
 import { ReactElement, useEffect, useState } from 'react'
-import { useNavigate } from 'react-router'
+import { useNavigate } from 'react-router-dom'
 import access from '../api/access'
 
 interface AuthRouteProps {
