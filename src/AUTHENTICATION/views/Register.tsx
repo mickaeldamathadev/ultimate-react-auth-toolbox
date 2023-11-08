@@ -1,11 +1,13 @@
-import { useLoaderData } from 'react-router-dom'
 import { post } from 'ultimate-react-apirequests'
 import { Form, Input, Select, SubmitInput } from 'ultimate-react-form'
 import { IRole } from '../../ROLES/data/Role'
 import { CallbackProps } from '../data/types'
 
-export default function Register({ onError, onSuccess }: CallbackProps) {
-  const { roles }: any = useLoaderData()
+export default function Register({
+  onError,
+  onSuccess,
+  roles,
+}: CallbackProps & { roles: any[] }) {
   return (
     <Form
       onSubmission={async (data: any) => {
@@ -36,7 +38,7 @@ export default function Register({ onError, onSuccess }: CallbackProps) {
         name="role"
         options={
           roles
-            ? roles.data.map((role: IRole) => {
+            ? roles.map((role: IRole) => {
                 return {
                   value: role._id,
                   title: role.name,
