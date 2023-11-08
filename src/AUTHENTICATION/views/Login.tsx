@@ -11,6 +11,7 @@ export default function Login({ onError, onSuccess }: CallbackProps) {
 
   const submit = async (data: ILogin) => {
     try {
+      console.log(data)
       const loginRequest: any = await login(data)
 
       if (loginRequest.error) {
