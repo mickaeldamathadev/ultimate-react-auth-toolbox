@@ -7,10 +7,7 @@ interface AuthRouteProps {
   onError: () => any
 }
 
-export default function RestrictedRoute({
-  component,
-  onError,
-}: AuthRouteProps) {
+export default function RestrictedRoute({ component }: AuthRouteProps) {
   const nav = useNavigate()
   const [auth, setAuth] = useState(false)
 
@@ -23,7 +20,7 @@ export default function RestrictedRoute({
       setAuth(true)
     } catch (error) {
       console.log(error)
-      onError()
+      nav('/')
     }
   }
   useEffect(() => {
