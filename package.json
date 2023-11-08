@@ -14,11 +14,12 @@
     "push": "npm run build && version=$(npm pkg get version) && git add . && git commit -m 'v $version'  && git push && npm version patch && npm publish"
   },
   "dependencies": {
+    "react-router-dom": "^6.18.0",
     "react-hook-form": "^7.48.2",
     "typescript": "^5.2.2",
-    "ultimate-react-apirequests": "^1.0.2",
+    "ultimate-react-apirequests": "^1.0.4",
     "ultimate-react-form": "^1.0.1",
-    "ultimate-react-mongo-requests": "^1.0.1",
+    "ultimate-react-mongo-requests": "^1.0.3",
     "ultimate-react-mongo-table": "^1.0.3",
     "ultimate-react-table": "^0.0.0"
   },
