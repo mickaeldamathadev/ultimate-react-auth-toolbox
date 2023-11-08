@@ -1,12 +1,11 @@
+import { useLoaderData } from 'react-router'
 import DocumentTable from 'ultimate-react-mongo-table'
 
-export default function Roles(props: { roles: any[] }) {
+export default function Roles() {
+  const roles = useLoaderData()
   return (
     <div className="roles flex-start">
-      <DocumentTable<any>
-        documents={props.roles as any[]}
-        action={() => null}
-      />
+      <DocumentTable<any> documents={roles as any[]} action={() => null} />
     </div>
   )
 }

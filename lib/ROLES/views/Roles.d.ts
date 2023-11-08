@@ -1,3 +1,1 @@
-export default function Roles(props: {
-    roles: any[];
-}): import("react/jsx-runtime").JSX.Element;
+export default function Roles(): import("react/jsx-runtime").JSX.Element;
