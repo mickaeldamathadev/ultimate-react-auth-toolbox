@@ -10,7 +10,7 @@ export default async function login({ password, contact }: ILogin) {
     }
 
     const request = await post('/login', {}, { password, contact })
-
+    console.log(request)
     if (request.error) {
       throw new Error(request.error)
     }
