@@ -1,12 +1,16 @@
 import { ReactElement, useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router'
 import access from '../api/access'
 
 interface AuthRouteProps {
   component: ReactElement
+  onError: () => any
 }
 
-export default function RestrictedRoute({ component }: AuthRouteProps) {
+export default function RestrictedRoute({
+  component,
+  onError,
+}: AuthRouteProps) {
   const nav = useNavigate()
   const [auth, setAuth] = useState(false)
 
@@ -19,7 +23,7 @@ export default function RestrictedRoute({ component }: AuthRouteProps) {
       setAuth(true)
     } catch (error) {
       console.log(error)
-      nav('/')
+      onError()
     }
   }
   useEffect(() => {
