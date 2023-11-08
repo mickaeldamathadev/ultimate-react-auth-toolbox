@@ -3,8 +3,4 @@ export declare class RequestError extends Error {
     message: string;
     constructor(message: string, status: number);
 }
-export default function permissionLoader(): Promise<{
-    data?: unknown;
-    error?: string;
-    status?: number;
-}>;
+export default function permissionLoader(): Promise<unknown>;

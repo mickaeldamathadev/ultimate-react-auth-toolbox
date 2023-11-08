@@ -16,7 +16,7 @@ export default async function rolesLoader() {
     if (roles.error) {
       throw new RequestError('', roles.status!)
     }
-    return roles
+    return roles.data
   } catch (error: any) {
     throw new Response('', {
       status: error.status,

@@ -4,7 +4,6 @@ export declare class RequestError extends Error {
     constructor(message: string, status: number);
 }
 export default function rolesAndPermsLoader(): Promise<{
-    data?: unknown;
-    error?: string;
-    status?: number;
+    roles: unknown;
+    perms: unknown;
 }>;

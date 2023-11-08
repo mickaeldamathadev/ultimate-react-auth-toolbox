@@ -11,12 +11,12 @@ export class RequestError extends Error {
 }
 export default async function rolesAndPermsLoader() {
   try {
-    const [users] = await Promise.all([get('/role'), get('/scope')])
-    console.log(users)
-    if (users.error) {
-      throw new RequestError('', users.status!)
+    const [roles, perms] = await Promise.all([get('/role'), get('/scope')])
+
+    if (roles.error || perms.error) {
+      throw new RequestError('', 304)
     }
-    return users
+    return { roles: roles.data, perms: perms.data }
   } catch (error: any) {
     throw new Response('', {
       status: error.status,

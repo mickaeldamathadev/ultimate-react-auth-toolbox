@@ -16,7 +16,7 @@ export default async function usersLoader() {
     if (users.error) {
       throw new RequestError('', users.status!)
     }
-    return users
+    return users.data
   } catch (error: any) {
     throw new Response('', {
       status: error.status,

@@ -16,7 +16,7 @@ export default async function permissionLoader() {
     if (perms.error) {
       throw new RequestError('', perms.status!)
     }
-    return perms
+    return perms.data
   } catch (error: any) {
     throw new Response('', {
       status: error.status,
