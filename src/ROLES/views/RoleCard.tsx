@@ -15,7 +15,7 @@ export default function RoleCard({ onError, onSuccess }: CallbackProps) {
   const updateRolePerms = async () => {
     try {
       const request = await getDoc(id!)
-
+      console.log(request)
       if (request.error) {
         throw new Error(request.error)
       }
