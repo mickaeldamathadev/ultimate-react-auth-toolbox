@@ -1,5 +1,4 @@
 import { useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { Form } from 'ultimate-react-form'
 import login from '../api/login'
 import { UserContext } from '../context/UserContext'
@@ -9,7 +8,7 @@ import { CallbackProps, ILogin } from '../data/types'
 export default function Login({ onError, onSuccess }: CallbackProps) {
   const Context = UserContext()
   const { setUser } = useContext(Context)
-  const nav = useNavigate()
+
   const submit = async (data: ILogin) => {
     try {
       const loginRequest: any = await login(data)
