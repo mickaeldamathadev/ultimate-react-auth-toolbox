@@ -12,7 +12,7 @@ export default function CreatePermission({
 }: CallbackProps) {
   const { createDoc } = useRoutes<IPermission>('scope')
 
-  const { user } = useContext(UserContext<any>())
+  const { user } = useContext(UserContext)
 
   return (
     <div className="flex-center">

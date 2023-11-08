@@ -6,8 +6,7 @@ import loginForm from '../data/forms/login-form'
 import { CallbackProps, ILogin } from '../data/types'
 
 export default function Login({ onError, onSuccess }: CallbackProps) {
-  const Context = UserContext<any>()
-  const { setUser } = useContext(Context)
+  const { setUser } = useContext(UserContext)
 
   const submit = async (data: ILogin) => {
     try {
