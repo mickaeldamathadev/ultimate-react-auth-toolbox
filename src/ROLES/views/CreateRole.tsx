@@ -6,7 +6,7 @@
  * @param {string} description - The description of the role
  */
 
-import { Form } from 'ultimate-react-form'
+import { Form, SubmitInput } from 'ultimate-react-form'
 import { useRoutes } from 'ultimate-react-mongo-requests'
 import { CallbackProps } from '../../AUTHENTICATION/data/types'
 import { IRole } from '../data/Role'
@@ -31,7 +31,9 @@ export default function CreateRole({ onError, onSuccess }: CallbackProps) {
           }
         }}
         formData={createRoleForm()}
-      />
+      >
+        <SubmitInput title="Création" />
+      </Form>
     </div>
   )
 }

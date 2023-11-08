@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { Form } from 'ultimate-react-form'
+import { Form, SubmitInput } from 'ultimate-react-form'
 import { useRoutes } from 'ultimate-react-mongo-requests'
 import { UserContext } from '../../AUTHENTICATION/context/UserContext'
 import { CallbackProps } from '../../AUTHENTICATION/data/types'
@@ -30,7 +30,9 @@ export default function CreatePermission({
           }
         }}
         formData={createPermissionForm(user._id)}
-      />
+      >
+        <SubmitInput title="Création" />
+      </Form>
     </div>
   )
 }
