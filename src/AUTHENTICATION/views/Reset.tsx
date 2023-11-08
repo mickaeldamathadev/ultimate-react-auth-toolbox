@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom'
-import { Form } from 'ultimate-react-form'
+import { Form, SubmitInput } from 'ultimate-react-form'
 import reset from '../api/reset'
 import resetForm from '../data/forms/reset-form'
 import { CallbackProps } from '../data/types'
@@ -26,7 +26,9 @@ export default function Reset({ onError, onSuccess }: CallbackProps) {
   }
   return (
     <div className="form-frame">
-      <Form onSubmission={submit} formData={resetForm} />
+      <Form onSubmission={submit} formData={resetForm}>
+        <SubmitInput title="Envoyer" />
+      </Form>
     </div>
   )
 }

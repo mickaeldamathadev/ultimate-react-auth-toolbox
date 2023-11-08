@@ -1,4 +1,4 @@
-import { Form } from 'ultimate-react-form'
+import { Form, SubmitInput } from 'ultimate-react-form'
 import forgot from '../api/forgot'
 import forgotForm from '../data/forms/forgot-form'
 import { CallbackProps, ILogin } from '../data/types'
@@ -18,7 +18,9 @@ export default function Forgot({ onError, onSuccess }: CallbackProps) {
   }
   return (
     <div className="form-frame">
-      <Form onSubmission={submit} formData={forgotForm} />
+      <Form onSubmission={submit} formData={forgotForm}>
+        <SubmitInput title="Envoyer" />
+      </Form>
     </div>
   )
 }

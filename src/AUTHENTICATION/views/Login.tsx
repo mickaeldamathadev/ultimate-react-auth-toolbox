@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { Form } from 'ultimate-react-form'
+import { Form, SubmitInput } from 'ultimate-react-form'
 import login from '../api/login'
 import { UserContext } from '../context/UserContext'
 import loginForm from '../data/forms/login-form'
@@ -28,7 +28,9 @@ export default function Login({ onError, onSuccess }: CallbackProps) {
   }
   return (
     <div className="form-frame">
-      <Form onSubmission={submit} formData={loginForm} />
+      <Form onSubmission={submit} formData={loginForm}>
+        <SubmitInput title="Connexion" />
+      </Form>
     </div>
   )
 }
