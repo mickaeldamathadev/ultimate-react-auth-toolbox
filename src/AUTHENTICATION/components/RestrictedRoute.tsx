@@ -4,7 +4,6 @@ import access from '../api/access'
 
 interface AuthRouteProps {
   component: ReactElement
-  onError: () => any
 }
 
 export default function RestrictedRoute({ component }: AuthRouteProps) {
