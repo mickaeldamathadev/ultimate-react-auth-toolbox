@@ -1,32 +1,31 @@
-import { ReactNode, useEffect, useState } from "react";
-import verifyScope from "../api/scope";
+import { ReactNode, useEffect, useState } from 'react'
+import verifyScope from '../api/scope'
 
 interface ScopedComponentProps {
-  children: ReactNode;
-  scope: string;
+  children: ReactNode
+  scope: string
 }
 
 export default function ScopedComponent({
   children,
   scope,
 }: ScopedComponentProps) {
-  const [auth, setAuth] = useState(false);
+  const [auth, setAuth] = useState(false)
 
   useEffect(() => {
-    (async function () {
+    ;(async function () {
       try {
-        const req = await verifyScope(scope);
-        console.log(req);
+        const req = await verifyScope(scope)
 
         if (req.error) {
-          throw new Error("");
+          throw new Error('')
         }
-        setAuth(true);
+        setAuth(true)
       } catch (error) {
-        setAuth(false);
+        setAuth(false)
       }
-    })();
-  }, []);
+    })()
+  }, [])
 
-  return <>{auth ? children : null}</>;
+  return <>{auth ? children : null}</>
 }
