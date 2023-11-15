@@ -1,15 +1,15 @@
 import { Dispatch, SetStateAction, createContext, useState } from 'react'
-import { IProps } from '../data/types'
+import { IProps, IUser } from '../data/types'
 
 interface IUSerContext {
-  user: any
-  setUser: Dispatch<SetStateAction<any>>
+  user: IUser
+  setUser: Dispatch<SetStateAction<IUser>>
 }
 
 export const UserContext = createContext<IUSerContext>({} as IUSerContext)
 
 export default function UserContextProvider({ children }: IProps) {
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState<IUser>({} as IUser)
 
   return (
     <UserContext.Provider value={{ user, setUser }}>

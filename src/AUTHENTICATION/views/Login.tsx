@@ -17,6 +17,7 @@ export default function Login({ onError, onSuccess }: CallbackProps) {
       }
 
       const userdb = loginRequest.data.user
+
       setUser((user) => {
         return { ...userdb }
       })
