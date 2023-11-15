@@ -1,13 +1,9 @@
-import { useContext } from 'react'
 import { Form, SubmitInput } from 'ultimate-react-form'
 import login from '../api/login'
-import { UserContext } from '../context/UserContext'
 import loginForm from '../data/forms/login-form'
 import { CallbackProps, ILogin } from '../data/types'
 
 export default function Login({ onError, onSuccess }: CallbackProps) {
-  const { setUser } = useContext(UserContext)
-
   const submit = async (data: ILogin) => {
     try {
       const loginRequest: any = await login(data)
@@ -16,10 +12,7 @@ export default function Login({ onError, onSuccess }: CallbackProps) {
         throw new Error(loginRequest.error)
       }
 
-      const userdb = loginRequest.data.user
-      console.log(userdb)
-      setUser({ ...userdb })
-      onSuccess(userdb)
+      onSuccess(loginRequest.data.user)
     } catch (error: any) {
       onError(error.message)
     }
