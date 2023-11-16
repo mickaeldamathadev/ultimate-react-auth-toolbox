@@ -12,7 +12,7 @@ export class RequestError extends Error {
 export default async function rolesLoader() {
   try {
     const [roles] = await Promise.all([get('/role')])
-    console.log(roles)
+
     if (roles.error) {
       throw new RequestError('', roles.status!)
     }
