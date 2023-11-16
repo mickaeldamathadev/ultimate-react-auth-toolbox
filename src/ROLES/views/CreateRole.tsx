@@ -23,7 +23,7 @@ export default function CreateRole(props: { onError: any; onSuccess: any }) {
             if (res.error) {
               throw new Error(res.error)
             }
-            props.onSuccess(res.data, props)
+            props.onSuccess({ data: res.data, ...props })
           } catch (error) {
             props.onError(error.message)
           }
