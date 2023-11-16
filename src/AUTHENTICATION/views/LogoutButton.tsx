@@ -4,8 +4,7 @@ import logout from '../api/logout'
 export default function LogoutButton(props: {
   children?: ReactNode
   title?: string
-  onError: any
-  onSuccess: any
+  onError?: any
 }) {
   const signout = async () => {
     try {
@@ -14,8 +13,6 @@ export default function LogoutButton(props: {
       if (loginRequest.error) {
         throw new Error(loginRequest.error)
       }
-
-      props.onSuccess(loginRequest.data.user)
     } catch (error: any) {
       props.onError(error.message)
     }
