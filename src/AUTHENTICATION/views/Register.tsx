@@ -9,7 +9,7 @@ export default function Register({
   onSuccess,
   roles,
   children,
-}: CallbackProps & { roles: any[]; children: ReactNode }) {
+}: CallbackProps & { roles: any[]; children?: ReactNode }) {
   return (
     <Form
       onSubmission={async (data: any) => {
