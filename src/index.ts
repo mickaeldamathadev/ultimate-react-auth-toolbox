@@ -7,6 +7,7 @@ import rolesAndPermsLoader from './AUTHENTICATION/loaders/roleAndPermsLoader'
 import usersLoader from './AUTHENTICATION/loaders/usersLoader'
 import Forgot from './AUTHENTICATION/views/Forgot'
 import Login from './AUTHENTICATION/views/Login'
+import LogoutButton from './AUTHENTICATION/views/LogoutButton'
 import Register from './AUTHENTICATION/views/Register'
 import Reset from './AUTHENTICATION/views/Reset'
 import Validate from './AUTHENTICATION/views/Validate'
@@ -18,12 +19,12 @@ import rolesLoader from './ROLES/loaders/rolesLoader'
 import CreateRole from './ROLES/views/CreateRole'
 import RoleCard from './ROLES/views/RoleCard'
 import Roles from './ROLES/views/Roles'
-
 export {
   CreatePermission,
   CreateRole,
   Forgot,
   Login,
+  LogoutButton,
   PermissionCard,
   Permissions,
   Register,
