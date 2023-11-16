@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import { post } from 'ultimate-react-apirequests'
 import { Form, Input, Select, SubmitInput } from 'ultimate-react-form'
 import { IRole } from '../../ROLES/data/Role'
@@ -7,7 +8,8 @@ export default function Register({
   onError,
   onSuccess,
   roles,
-}: CallbackProps & { roles: any[] }) {
+  children,
+}: CallbackProps & { roles: any[]; children: ReactNode }) {
   return (
     <Form
       onSubmission={async (data: any) => {
@@ -47,8 +49,10 @@ export default function Register({
             : []
         }
       />
+      {children}
       <Input type="password" name="password" placeholder="Mot de passe" />
       <Input type="password" name="confirm" placeholder="Confirm" />
+
       <SubmitInput title="Enregistrer" />
     </Form>
   )
