@@ -26,7 +26,7 @@ export default function CreateRole({ onError, onSuccess }: CallbackProps) {
             if (res.error) {
               throw new Error(res.error)
             }
-
+            console.log(methods)
             onSuccess(res.data)
             methods && methods.setExp && methods.setExp(false)
           } catch (error) {
