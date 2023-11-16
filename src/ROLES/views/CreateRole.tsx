@@ -6,7 +6,7 @@
  * @param {string} description - The description of the role
  */
 
-import { useOutletContext } from 'react-router'
+import { useOutletContext } from 'react-router-dom'
 import { Form, SubmitInput } from 'ultimate-react-form'
 import { useRoutes } from 'ultimate-react-mongo-requests'
 import { CallbackProps } from '../../AUTHENTICATION/data/types'
