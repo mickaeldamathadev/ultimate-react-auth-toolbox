@@ -19,7 +19,7 @@
     "react-router-dom": "^6.18.0",
     "typescript": "^5.2.2",
     "ultimate-react-apirequests": "^1.0.4",
-    "ultimate-react-form": "^1.0.1",
+    "ultimate-react-form": "^1.0.4",
     "ultimate-react-mongo-requests": "^1.0.4",
     "ultimate-react-mongo-table": "^1.0.3",
     "ultimate-react-table": "^0.0.0"
