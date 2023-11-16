@@ -1,7 +1,9 @@
+import { ReactNode } from 'react'
 import logout from '../api/logout'
 
 export default function LogoutButton(props: {
-  title: string
+  children?: ReactNode
+  title?: string
   onError: any
   onSuccess: any
 }) {
@@ -21,6 +23,7 @@ export default function LogoutButton(props: {
   return (
     <button className="logout" onClick={() => signout()}>
       {props.title}
+      {props.children}
     </button>
   )
 }
