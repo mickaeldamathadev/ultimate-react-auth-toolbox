@@ -1,8 +1,8 @@
-import { useLoaderData } from 'react-router'
+import { useRouteLoaderData } from 'react-router'
 import DocumentTable from 'ultimate-react-mongo-table'
 
 export default function Roles(props: { action: (id: string) => void }) {
-  const roles = useLoaderData()
+  const roles = useRouteLoaderData('roles')
 
   return (
     <div className="roles flex-start">
