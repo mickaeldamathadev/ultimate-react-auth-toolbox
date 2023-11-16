@@ -6,6 +6,7 @@
  * @param {string} description - The description of the role
  */
 
+import { useOutletContext } from 'react-router'
 import { Form, SubmitInput } from 'ultimate-react-form'
 import { useRoutes } from 'ultimate-react-mongo-requests'
 import { CallbackProps } from '../../AUTHENTICATION/data/types'
@@ -14,6 +15,7 @@ import createRoleForm from '../data/create-role-form'
 
 export default function CreateRole({ onError, onSuccess }: CallbackProps) {
   const { createDoc } = useRoutes<IRole>('/role')
+  const methods: any = useOutletContext()
   return (
     <div className="flex-center">
       <h1>Ajouter un rôle</h1>
@@ -26,6 +28,7 @@ export default function CreateRole({ onError, onSuccess }: CallbackProps) {
             }
 
             onSuccess(res.data)
+            methods && methods.setExp && methods.setExp(false)
           } catch (error) {
             onError(error.message)
           }
