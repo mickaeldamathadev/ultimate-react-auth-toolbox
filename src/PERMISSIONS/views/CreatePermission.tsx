@@ -16,7 +16,7 @@ export default function CreatePermission({
 
   return (
     <div className="flex-center">
-      <h1>Ajouter un rôle</h1>
+      <h1>Ajouter une permission</h1>
       <Form
         onSubmission={async (data: IPermission) => {
           try {
