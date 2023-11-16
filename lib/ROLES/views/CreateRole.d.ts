@@ -5,5 +5,7 @@
  * @param {string} name - The name of the role
  * @param {string} description - The description of the role
  */
-import { CallbackProps } from '../../AUTHENTICATION/data/types';
-export default function CreateRole({ onError, onSuccess }: CallbackProps): import("react/jsx-runtime").JSX.Element;
+export default function CreateRole(props: {
+    onError: any;
+    onSuccess: any;
+}): import("react/jsx-runtime").JSX.Element;

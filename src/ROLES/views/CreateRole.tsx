@@ -8,11 +8,10 @@
 
 import { Form, SubmitInput } from 'ultimate-react-form'
 import { useRoutes } from 'ultimate-react-mongo-requests'
-import { CallbackProps } from '../../AUTHENTICATION/data/types'
 import { IRole } from '../data/Role'
 import createRoleForm from '../data/create-role-form'
 
-export default function CreateRole({ onError, onSuccess }: CallbackProps) {
+export default function CreateRole(props: { onError: any; onSuccess: any }) {
   const { createDoc } = useRoutes<IRole>('/role')
   return (
     <div className="flex-center">
@@ -24,9 +23,9 @@ export default function CreateRole({ onError, onSuccess }: CallbackProps) {
             if (res.error) {
               throw new Error(res.error)
             }
-            onSuccess(res.data)
+            props.onSuccess(res.data, props)
           } catch (error) {
-            onError(error.message)
+            props.onError(error.message)
           }
         }}
         formData={createRoleForm()}
